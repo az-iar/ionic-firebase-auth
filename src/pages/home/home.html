@@ -1,14 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Firebase
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="firebase.user()">
+    <p>Current User : {{ firebase.user().displayName }}</p>
+
+    <button ion-button block (click)="logout()">Logout</button>
+  </div>
+
+  <div *ngIf="!firebase.user()">
+    <button ion-button block (click)="login()">Login</button>
+    <button ion-button block (click)="register()" color="secondary">Register</button>
+  </div>
 </ion-content>
