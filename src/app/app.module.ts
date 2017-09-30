@@ -10,12 +10,19 @@ import { FirebaseProvider } from "../providers/firebase/firebase";
 import { LoginPage } from "../pages/login/login";
 import { HttpModule } from "@angular/http";
 import { RegisterPage } from "../pages/register/register";
+import { CreateBookingPage } from "../pages/create-booking/create-booking";
 
 @NgModule({
-  declarations: [MyApp, HomePage, LoginPage, RegisterPage],
+  declarations: [MyApp, HomePage, LoginPage, RegisterPage, CreateBookingPage],
   imports: [BrowserModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, LoginPage, RegisterPage],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    LoginPage,
+    RegisterPage,
+    CreateBookingPage
+  ],
   providers: [
     StatusBar,
     SplashScreen,

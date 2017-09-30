@@ -10,7 +10,14 @@
   <div *ngIf="firebase.user()">
     <p>Current User : {{ firebase.user().displayName }}</p>
 
+    <button ion-button block (click)="createBooking()" color="secondary">Create Booking</button>
     <button ion-button block (click)="logout()">Logout</button>
+
+    <h3>My Bookings</h3>
+
+    <div *ngFor="let booking of myBookings">
+      <p>ID : {{ booking.id }}</p>
+    </div>
   </div>
 
   <div *ngIf="!firebase.user()">

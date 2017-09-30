@@ -42,6 +42,14 @@ export class FirebaseProvider {
     return this.currentUser;
   }
 
+  auth(){
+    return firebase.auth();
+  }
+
+  database(){
+    return firebase.database();
+  }
+
   logout() {
     return firebase.auth().signOut();
   }
